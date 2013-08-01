@@ -1,4 +1,1 @@
-combattle
-=========
-
-A D&amp;D turn tracker for the working man!
+A D&D turn tracker for the working man!
