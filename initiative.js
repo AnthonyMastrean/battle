@@ -1,7 +1,16 @@
+var i = []
+
 function initiative() {
-	console.log("%s (%s)", document.initiative.name.value, document.initiative.init.value);
-	document.initiative.reset()
+    var x = { };
+    x.name = document.character.name.value;
+    x.init = document.character.init.value;
+
+    i.push(x);
+
+	console.log("%s (%s)", x.name, x.init);
+
+	document.character.reset();
 	return false;
 }
 
-document.initiative.onsubmit = initiative;
+document.character.onsubmit = initiative;
