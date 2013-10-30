@@ -5,3 +5,7 @@ input[type="number"] {
 input[type="submit"] {
 	visibility: hidden;
 }
+
+li {
+	list-style-type: none;
+}

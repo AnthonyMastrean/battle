@@ -1,36 +1,32 @@
-var form = document.character;
-var list = document.characters;
+var form = document.getElementById("character-form");
+var list = document.getElementById("character-list");
 
 function initiative() {
-    var character = capture_character();
-	append_character(character)
-
+	append(capture_input());
 	form.reset();
+	form.name.focus();
 	return false;
 }
 
-function capture_character() {
-    var x = { };
-    x.name = document.character.name.value;
-    x.init = document.character.init.value;
+function capture_input() {
+    var pc = { };
+    pc.name = form.name.value;
+    pc.init = form.init.value;
 
-	console.log("%s (%s)", x.name, (x.init ? x.init : 0));
-
-    return x;
+    return pc;
 }
 
-function empty_characters() {
+function empty() {
 	while(list.firstChild) { 
 		list.removeChild(list.firstChild); 
 	}	
 }
 
-function append_character(character) {
-    var message = character.name + " (" + character.init + ")";
-	var text = document.createTextNode(message);
-	var li = document.createElement("li");
-	li.appendChild(text);
-	list.appendChild(li);
+function append(pc) {
+	var text = document.createTextNode(pc.name + " (" + pc.init + ")");
+	var item = document.createElement("li");
+	item.appendChild(text);
+	list.appendChild(item);
 }
 
-document.character.onsubmit = initiative;
+form.onsubmit = initiative;
