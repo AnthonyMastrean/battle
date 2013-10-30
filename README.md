@@ -1,1 +1,2 @@
-A D&D turn tracker for the working man!
+# Roll for Initiative!
+A D&D turn tracker
