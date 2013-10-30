@@ -5,6 +5,5 @@ end
 
 desc "Synchronize the website with Github Pages"
 task :deploy do |cmd|
-  system "git checkout gh-pages"
-  system "git merge master"
+  system "git push -f origin master:gh-pages"
 end
